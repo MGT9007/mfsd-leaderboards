@@ -1,0 +1,263 @@
+/* ================================================================
+   MFSD Leaderboards — Styles
+   Dark gaming theme consistent with Quest Log & Arcade.
+   ================================================================ */
+
+.mfsd-lbs {
+    --lb-bg:        #0d1117;
+    --lb-surface:   #161b22;
+    --lb-border:    #30363d;
+    --lb-text:      #e0e0e0;
+    --lb-muted:     #8b949e;
+    --lb-accent:    #58a6ff;
+    --lb-gold:      #fbbf24;
+    --lb-silver:    #c0c0c0;
+    --lb-bronze:    #cd7f32;
+    --lb-green:     #28a745;
+    --lb-purple:    #a855f7;
+    --lb-radius:    12px;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--lb-text);
+    background: var(--lb-bg);
+    border-radius: var(--lb-radius);
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.mfsd-lbs-msg {
+    text-align: center;
+    padding: 40px;
+    color: var(--lb-muted);
+}
+
+/* ── Header ── */
+.mfsd-lbs-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.mfsd-lbs-title {
+    margin: 0 0 6px;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--lb-text);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.mfsd-lbs-subtitle {
+    margin: 0;
+    font-size: 14px;
+    color: var(--lb-muted);
+}
+
+/* ── Card grid ── */
+.mfsd-lbs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* ── Card ── */
+.mfsd-lbs-card {
+    background: var(--lb-surface);
+    border: 1px solid var(--lb-border);
+    border-radius: var(--lb-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.mfsd-lbs-card:hover {
+    border-color: var(--lb-accent);
+    transform: translateY(-2px);
+}
+
+/* ── Card header ── */
+.mfsd-lbs-card-head {
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid var(--lb-border);
+}
+
+.mfsd-lbs-card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.mfsd-lbs-card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--lb-text);
+}
+
+.mfsd-lbs-card-cat {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--lb-muted);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 3px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.mfsd-lbs-card-players {
+    font-size: 12px;
+    color: var(--lb-muted);
+}
+
+/* ── Table ── */
+.mfsd-lbs-table-wrap {
+    padding: 0 4px;
+    flex: 1;
+}
+
+.mfsd-lbs-empty {
+    text-align: center;
+    padding: 28px 16px;
+    color: var(--lb-muted);
+    font-size: 13px;
+    font-style: italic;
+}
+
+.mfsd-lbs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.mfsd-lbs-table thead th {
+    color: var(--lb-muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 10px 12px 6px;
+    border-bottom: 1px solid #21262d;
+    text-align: left;
+}
+
+.mfsd-lbs-th-rank { width: 40px; text-align: center !important; }
+.mfsd-lbs-th-score { text-align: right !important; }
+
+.mfsd-lbs-table tbody tr {
+    border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+    transition: background 0.15s;
+}
+
+.mfsd-lbs-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.mfsd-lbs-table tbody tr:hover {
+    background: rgba(88, 166, 255, 0.04);
+}
+
+.mfsd-lbs-table tbody td {
+    padding: 8px 12px;
+}
+
+/* Rank column */
+.mfsd-lbs-rank {
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--lb-muted);
+}
+
+.mfsd-lbs-medal {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Name column */
+.mfsd-lbs-name {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.mfsd-lbs-you {
+    display: inline-block;
+    background: var(--lb-accent);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+/* Score column */
+.mfsd-lbs-score {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: var(--lb-gold);
+    font-size: 14px;
+}
+
+/* Highlighted row (current student) */
+.mfsd-lbs-me {
+    background: rgba(251, 191, 36, 0.08) !important;
+}
+
+.mfsd-lbs-me .mfsd-lbs-name {
+    color: var(--lb-gold);
+}
+
+/* ── Student rank footer ── */
+.mfsd-lbs-my-rank {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-top: 1px solid var(--lb-border);
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.06), rgba(168, 85, 247, 0.04));
+    font-size: 13px;
+}
+
+.mfsd-lbs-my-rank-label {
+    color: var(--lb-muted);
+    flex: 1;
+}
+
+.mfsd-lbs-my-rank-value {
+    font-weight: 700;
+    color: var(--lb-gold);
+    font-size: 16px;
+}
+
+.mfsd-lbs-my-rank-score {
+    color: var(--lb-muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.mfsd-lbs-no-score {
+    background: none;
+}
+
+.mfsd-lbs-no-score .mfsd-lbs-my-rank-label {
+    font-style: italic;
+    text-align: center;
+    flex: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+    .mfsd-lbs { padding: 16px; }
+    .mfsd-lbs-grid { grid-template-columns: 1fr; }
+    .mfsd-lbs-title { font-size: 22px; }
+    .mfsd-lbs-card-title { font-size: 16px; }
+}
